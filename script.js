@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ];
 
-    let currentQuestion = 0; // ← винесли назовні
+    let currentQuestion = 0; 
 
     const renderQuestion = () => {
         const q = questions[currentQuestion];
@@ -68,14 +68,13 @@ document.addEventListener('DOMContentLoaded', function () {
             formAnswers.appendChild(answerItem);
         });
 
-        // ---- ПОКАЗ / ПРИХОВУВАННЯ КНОПОК ----
         prevbutton.style.display = currentQuestion === 0 ? "none" : "inline-block";
         nextbutton.style.display = currentQuestion === questions.length - 1 ? "none" : "inline-block";
     };
 
     btnOpenModal.addEventListener('click', () => {
         modalBlock.classList.add('d-block');
-        currentQuestion = 0;      // при відкритті починаємо з першого
+        currentQuestion = 0;   
         renderQuestion();
     });
 
@@ -83,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
         modalBlock.classList.remove('d-block');
     });
 
-    // --- КНОПКА ДАЛІ ---
     nextbutton.addEventListener('click', () => {
         if (currentQuestion < questions.length - 1) {
             currentQuestion++;
@@ -91,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // --- КНОПКА НАЗАД ---
     prevbutton.addEventListener('click', () => {
         if (currentQuestion > 0) {
             currentQuestion--;
@@ -100,3 +97,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
